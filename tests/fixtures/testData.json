@@ -1,0 +1,14 @@
+{
+    "emails": [
+        "admin@practicesoftwaretesting.com",
+        "customer@practicesoftwaretesting.com",
+        "customer2@practicesoftwaretesting.com",
+        "customer3@practicesoftwaretesting.com"
+    ]
+    ,
+    "passwords": [
+        "welcome01",
+        "pass123"
+      
+    ]
+}

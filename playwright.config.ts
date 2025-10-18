@@ -32,12 +32,12 @@ export default defineConfig({
     baseURL: 'https://practicesoftwaretesting.com/',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on',
+    trace: 'off',
     actionTimeout: 0,
     ignoreHTTPSErrors: true,
     screenshot: 'only-on-failure',
     //video: 'retain-on-failure',
-    headless: true,
+    headless: false,
   },
 
   /* Configure projects for major browsers */
