@@ -9,7 +9,9 @@ export class HomePage {
   readonly addToCartButton: Locator;
   readonly productAddedToShoppingCartNotification: Locator;
   readonly cartIcon: Locator;
-  readonly proceedToCheckoutButton: Locator;
+  readonly proceedToCheckoutButton_1: Locator;
+  readonly proceedToCheckoutButton_2: Locator;
+  readonly proceedToCheckoutButton_3: Locator;
   readonly continueShoppingButton: Locator;
   readonly continueAsGuestTabButton: Locator;
   readonly signInTabButton: Locator;
@@ -30,12 +32,14 @@ export class HomePage {
     this.addToCartButton = page.locator('[data-test="add-to-cart"]')
     this.productAddedToShoppingCartNotification = page.getByRole('alert', { name: 'Product added to shopping' })
     this.cartIcon = page.locator('[data-test="nav-cart"]')
-    this.proceedToCheckoutButton = page.getByText('Proceed to checkout')
+    this.proceedToCheckoutButton_1 = page.locator('[data-test="proceed-1"]')
+    this.proceedToCheckoutButton_2 = page.locator('[data-test="proceed-2"]')
+    this.proceedToCheckoutButton_3 = page.locator('[data-test="proceed-3"]')  
     this.continueShoppingButton = page.locator('[data-test="continue-shopping"]')
     this.continueAsGuestTabButton = page.getByRole('tab', { name: 'Continue as Guest' });
     this.signInTabButton = page.getByRole('tab', { name: 'Sign in' })
-    this.stateInput = page.locator('[data-test="state"]');
-    this.postCodeInput = page.locator('[data-test="postal_code"]');
+    this.stateInput = page.locator('[placeholder="State *"]');
+    this.postCodeInput = page.locator('[placeholder="Your Postcode *"]');
     this.paymentMethodIsRequiredText = page.getByText('Payment method is required.')
     this.paymentMethodDropdown = page.locator('[data-test="payment_method"]');
     this.bankNameInput = page.locator('[data-test="bank_name"]');
@@ -61,12 +65,6 @@ export class HomePage {
   async clickToCartIcon() {
     await this.cartIcon.click();
   }
-
-  async clickToProceedToCheckOut(element: Locator, text: string) {
-        await element.filter({ hasText: text }).click();
-    }
-
-  
 
   async clickToContinueShopping() {
     await this.continueShoppingButton.click();

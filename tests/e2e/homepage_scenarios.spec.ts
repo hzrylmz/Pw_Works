@@ -34,21 +34,22 @@ test.describe('Homepage Test Suite', () => {
   });
 
   test('TC-4) Order for a product -  Hammer', async ({ page, helpers, homepage, login }) => {
+    test.slow();
     await helpers.clicktoElementbyText(page.locator('.col-md-9 .container .card'), ' Thor Hammer ');
     await homepage.clickToAddToCart();
     await helpers.notificationIsVisible(homepage.productAddedToShoppingCartNotification);
     await homepage.clickToCartIcon();
-    await homepage.clickToProceedToCheckout();
+    await helpers.clickToElement(homepage.proceedToCheckoutButton_1);
 
     await helpers.fillInputField(login.emailInput, email);
     await helpers.fillInputField(login.passwordInput, password);
     await login.clickLoginButton();
 
-    await homepage.clickToProceedToCheckout();
+    await helpers.clickToElement(homepage.proceedToCheckoutButton_2);
     await helpers.fillInputField(homepage.stateInput, state);
     await helpers.fillInputField(homepage.postCodeInput, postCode);
 
-    await homepage.clickToProceedToCheckout();
+    await helpers.clickToElement(homepage.proceedToCheckoutButton_3);
 
     await helpers.textIsVisible(' Payment method is required. ');
     await helpers.selectOptionFromDropdown(homepage.paymentMethodDropdown, 'bank-transfer');

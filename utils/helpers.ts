@@ -61,6 +61,10 @@ export class Helpers {
         await expect(this.page.getByText(text)).toBeVisible();
     }
 
+    async clickToElement(element: Locator) {
+        await element.click();
+    }
+
  
 
 
