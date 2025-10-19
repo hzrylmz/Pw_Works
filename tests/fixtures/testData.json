@@ -11,4 +11,13 @@
         "pass123"
       
     ]
+    ,
+    "states": [
+        "North Carolina",
+        "Montana"
+    ],
+    "postCodes": [
+        "27514",
+        "59001"
+    ]
 }

@@ -48,6 +48,19 @@ export class Helpers {
         await element.fill(value);
     }
 
+    async notificationIsVisible(element: Locator) {
+        await expect(element).toBeVisible();
+    }
+
+
+    async selectOptionFromDropdown(element: Locator, optionText: string) {
+        await element.selectOption({ label: optionText });
+    }
+
+    async textIsVisible(text: string) {
+        await expect(this.page.getByText(text)).toBeVisible();
+    }
+
  
 
 
